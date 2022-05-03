@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Search Form</title>
+</head>
+
+<body>
+  <h1>Search for New York Times articles</h1>
+  {% if results %}
+  <h1>Headline: {{results['headline']}}</h1>
+  <h2>Abstract: {{results['abstract']}}</h2>
+  <p>Snippet: {{results['snippet']}}</p>
+  <p>Paragraph: {{results['paragraph']}}</p>
+  <ul>
+    <li>Author: {{results['author']}}</li>
+    <li>Publish date: {{results['publish_date']}}</li>
+    <li>Source: {{results['source']}}</li>
+    <li>Url: {{results['url']}}</li>
+    <li>Keyword: {{results['keyword']}}</li>
+    <li>ID: {{results['id']}}</li>
+    <li>uri: {{results['uri']}}</li>
+    <li>uri: {{results['multimedia']}}</li>
+  </ul>
+  {% endif %}
+  <form action="/search_results">
+    <input type="text" name="search_query" placeholder="Enter Search">
+    <button>Go!</button>
+  </form>
+</body>
+
+</html>
