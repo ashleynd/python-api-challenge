@@ -1,13 +1,23 @@
 from flask import Flask, render_template, request
 import requests
 
+"""
+Squirro Coding Challenge
+May 2022
+"""
+
 app = Flask(__name__)
 
 @app.route('/')
-def show_search_form():
+def connect():
     return render_template("search_form.html")
 
-def get_results(search_query):
+def disconnect(self):
+        """Disconnect from the source."""
+        # Nothing to do
+        pass
+
+def getDataBatch(search_query):
     res = requests.get(f"https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20120101&q={search_query}&api-key=AQ7HzqoGRaAzP4KGMWebITYkHEHy8wbk", params={'query': 'water', 'query': search_query})
 
     data = res.json()
@@ -46,7 +56,7 @@ def get_results(search_query):
     return results
 
 @app.route('/search_results')
-def get_search_results():
+def getSchema():
     search_query = request.args["search_query"]
-    results = get_results(search_query)
+    results = getDataBatch(search_query)
     return render_template("search_form.html", results=results)

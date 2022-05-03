@@ -2,9 +2,11 @@
 import requests
 
 response = requests.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20120101&q={query}&api-key=AQ7HzqoGRaAzP4KGMWebITYkHEHy8wbk',
-                    params={'query': 'water'})
+                    params={'query': 'New York City'})
 
 data = response.json()
+
+res = data["response"]["docs"][0]
 
 abstract = data["response"]["docs"][0]["abstract"]
 url = data["response"]["docs"][0]["web_url"]
@@ -19,9 +21,12 @@ author = data["response"]["docs"][0]["byline"]["original"]
 id = data["response"]["docs"][0]["_id"]
 uri = data["response"]["docs"][0]["uri"]
 print('*********************************')
-print(abstract)
-print(url)
+# print(res)
+print(headline)
 print(snippet)
+print(paragraph)
+print(author)
+print(source)
 print('*********************************')
 
 
