@@ -4,7 +4,7 @@
 
 ##### To run in Terminal to print:
 - ipython
-- %run nytimes.py
+- %run nytimes2.py
 
 ##### Initial development installs:
 - python3 -m venv venv
