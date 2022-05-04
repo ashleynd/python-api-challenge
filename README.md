@@ -1,8 +1,8 @@
 
-##### To run in Terminal for development:
+##### To run in Terminal view the UI version:
 - flask run 
 
-##### To run in Terminal to print:
+##### To run in Terminal to print Squirro's template:
 - ipython
 - %run nytimes2.py
 
@@ -12,8 +12,4 @@
 - pip install requests
 - pip freeze > requirements.txt
 - cat requirements.txt
-
-
-#####  To deploy:
-- https://www.geeksforgeeks.org/deploy-python-flask-app-on-heroku/
 
