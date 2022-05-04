@@ -12,3 +12,8 @@
 - pip install requests
 - pip freeze > requirements.txt
 - cat requirements.txt
+
+
+#####  To deploy:
+- https://www.geeksforgeeks.org/deploy-python-flask-app-on-heroku/
+
